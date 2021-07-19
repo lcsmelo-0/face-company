@@ -15,6 +15,7 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
+      "app-components": ["./src/components"],
       "app-images": ["./public/images"]
     }
   },

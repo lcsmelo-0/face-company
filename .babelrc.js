@@ -7,6 +7,7 @@ module.exports = {
         root: ['./'],
         alias: {
           'app-images': './public/images',
+          'app-components': './src/components',
         },
       },
     ],

@@ -1,0 +1,33 @@
+@import '../../../../assets/styles';
+
+.typography {
+  color: white;
+}
+
+h1.typography {
+  color: white;
+  font-size: 30px;
+  font-weight: $extra-bold;
+  line-height: 50px;
+}
+
+h2.typography {
+  margin: 0;
+  font-size: 20px;
+  font-weight: $bold;
+}
+
+label.typography {
+  background: $primary-grey;
+  color: $primary;
+  font-size: 12px;
+  left: 13px;
+  padding: 0 10px;
+  position: absolute;
+  top: -9px;
+  z-index: 2;
+
+  @include desktop {
+    font-size: 14px;
+  }
+}
