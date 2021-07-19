@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { UserPostsList } from 'app-models'
-import { Button, Modal, TextArea, Typography } from 'app-components'
 import { useRouter } from 'next/router'
 
+import { UserPostsList } from 'app-models'
+import { Button, Modal, TextArea, Typography } from 'app-components'
 import { useAppDispatch, useTextField } from 'app-hooks'
 import { deletePost, editPost } from 'app-actions'
 import { routes } from 'app-consts'

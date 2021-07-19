@@ -62,3 +62,18 @@ export const editPostFailed = (data: string) => ({
   type: PostsTypes.EDIT_POST_FAILED,
   error: data,
 })
+
+export const createPost = body => ({
+  type: PostsTypes.CREATE_POST,
+  body,
+})
+
+export const createPostSucceeded = (data: UserPostsList) => ({
+  type: PostsTypes.CREATE_POST_SUCCEEDED,
+  data,
+})
+
+export const createPostFailed = (data: string) => ({
+  type: PostsTypes.CREATE_POST_FAILED,
+  error: data,
+})

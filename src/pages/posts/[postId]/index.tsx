@@ -14,7 +14,7 @@ const PostDetail: NextPage = () => {
   const { posts } = useAppSelector(state => state)
   const router = useRouter()
 
-  const id = router && router.query && router.query.id
+  const id = router && router.query && router.query.postId
 
   useEffect(() => {
     if (id) {

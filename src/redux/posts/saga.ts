@@ -1,10 +1,18 @@
 import * as Effects from 'redux-saga/effects'
 
-import { deletePostRequest, editPostRequest, getPostDetailRequest, getUserPostsRequest } from 'app-services'
+import {
+  createPostRequest,
+  deletePostRequest,
+  editPostRequest,
+  getPostDetailRequest,
+  getUserPostsRequest,
+} from 'app-services'
 import { UserPostsList } from 'app-models'
 
 import { CallReturnType } from '../_store/rootSaga'
 import {
+  createPostFailed,
+  createPostSucceeded,
   deletePostFailed,
   deletePostSucceeded,
   editPostFailed,
@@ -56,6 +64,15 @@ export function* fetchEditPost({ id, body }) {
   }
 }
 
+export function* fetchCreatePost({ body }) {
+  try {
+    const response = yield call(createPostRequest, body)
+    yield put(createPostSucceeded(response))
+  } catch (error) {
+    yield put(createPostFailed(error))
+  }
+}
+
 export function* watchfetchUserPosts() {
   yield takeLatest(PostsTypes.GET_USER_POSTS, fetchUserPosts)
 }
@@ -70,4 +87,8 @@ export function* watchFetchDeletePost() {
 
 export function* watchFetchEditPost() {
   yield takeLatest(PostsTypes.EDIT_POST, fetchEditPost)
+}
+
+export function* watchFetchCreatePost() {
+  yield takeLatest(PostsTypes.CREATE_POST, fetchCreatePost)
 }

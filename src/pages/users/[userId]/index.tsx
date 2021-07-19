@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import { NextRouter, useRouter } from 'next/router'
 
 import { getUserDetail, getUserPosts } from 'app-actions'
-import { Post, Typography } from 'app-components'
+import { Button, Post, Typography } from 'app-components'
 import { useAppDispatch, useAppSelector } from 'app-hooks'
 import { UserPostsList } from 'app-models'
 import { loader } from 'app-utils'
@@ -15,7 +15,7 @@ const UserDetail: NextPage = () => {
   const dispatch = useAppDispatch()
   const { userDetail, posts } = useAppSelector(state => state)
 
-  const queryId = router && router.query && router.query.id
+  const queryId = router && router.query && router.query.userId
 
   useEffect(() => {
     if (queryId) {
@@ -57,6 +57,8 @@ const UserDetail: NextPage = () => {
           <Typography>
             {userDetail.data.email} | {userDetail.data.website}
           </Typography>
+
+          <Button href={`/users/${queryId}/new-post`}>Create new post</Button>
         </>
       )}
 

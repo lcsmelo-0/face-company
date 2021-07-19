@@ -31,13 +31,12 @@ p.error {
 }
 
 label.typography {
-  background: $primary-grey;
-  color: $primary;
+  color: rgb(0, 0, 0);
   font-size: 12px;
-  left: 13px;
+  left: 2px;
   padding: 0 10px;
   position: absolute;
-  top: -9px;
+  top: 0;
   z-index: 2;
 
   @include desktop {

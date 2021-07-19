@@ -45,3 +45,14 @@ export const editPostRequest = async (id: string | string[], body: UserPostsList
     return Promise.reject(error)
   }
 }
+
+export const createPostRequest = async (body: UserPostsList) => {
+  try {
+    const data = await baseUrl.post(`${endpoints.posts}`, body, {
+      headers: buildHeaders(),
+    })
+    return Promise.resolve(data.data)
+  } catch (error) {
+    return Promise.reject(error)
+  }
+}

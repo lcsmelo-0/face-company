@@ -1,0 +1,15 @@
+.newPost {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px;
+
+  & > h2 {
+    margin-bottom: 50px;
+  }
+
+  & > button {
+    margin-top: 50px;
+  }
+}
