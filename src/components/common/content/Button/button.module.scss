@@ -10,10 +10,10 @@
 
   &.link {
     background-color: transparent;
-    color: $primary-grey;
+    color: white;
     font-size: 14px;
-    font-weight: $semi-bold;
     text-align: initial;
+    text-decoration: underline;
   }
 
   &.primary {

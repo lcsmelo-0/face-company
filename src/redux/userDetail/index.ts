@@ -1,7 +1,7 @@
 import { UserDetailTypes } from './types'
 
 const INITIAL_STATE = {
-  data: [],
+  data: {},
   isFetching: false,
   error: false,
 }
