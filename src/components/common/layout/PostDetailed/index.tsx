@@ -63,7 +63,7 @@ export const PostDetailed: React.FC<PostDetailedProperties> = ({ data }: PostDet
       ) : (
         <Typography variant="h3">{data.title}</Typography>
       )}
-      
+
       {editMode ? (
         <TextArea value={body} updateState={setBody}>
           {body}

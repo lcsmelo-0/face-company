@@ -1,4 +1,5 @@
 export { Button } from './content/Button'
+export { Input } from './content/Input'
 export { Loader } from './content/Loader'
 export { Modal } from './content/Modal'
 export { TextArea } from './content/TextArea'
