@@ -1,7 +1,6 @@
 import { NextPage } from 'next'
+import HomePage from './homePage'
 
-const Home: NextPage = () => {
-  return <section>Face company</section>
-}
+const Home: NextPage = () => <HomePage />
 
 export default Home

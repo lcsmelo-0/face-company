@@ -1,34 +1,112 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Face company
 
-## Getting Started
+## Technologies
 
-First, run the development server:
+<img  src="https://i.imgur.com/xGSdpWC.png"  title="React, Typescript, Nextjs, Sass, Webpack"  >
+
+## Summary
+
+1.  Alias
+
+1.  First Steps
+
+1.  Running Project
+
+1.  Using a alias
+
+1.  Building for production
+
+1.  API Reference
+
+
+## Alias
+
+We have the following aliases configured in webpack:
+
+- `app-actions` - Reference to `redux/_actions` folder
+- `app-components` - Reference to `components` folder
+- `app-consts` - Reference to `consts` folder
+- `app-hooks` - Reference to `hooks` folder
+- `app-images` - Reference to `public/images` folder
+- `app-models` - Reference to `models` folder
+- `app-services` - Reference to `services` folder
+- `app-utils` - Reference to `utils` folder
+
+## First step
+
+Install the dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
+
+npm install
+
+# ou
+
+yarn
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Running the project
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Run the following command to run the project
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.tsx`.
+```bash
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+npm run dev
 
-## Learn More
+# ou
 
-To learn more about Next.js, take a look at the following resources:
+yarn dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+the project will run on port 3000
+`http://localhost:3000`
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Alias ​​Usage Example
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Inside the `components` folder we have an `index.js` file, which exports all the components we have in the project.
+
+You can import a component using the `app-components` alias that references this folder
+
+Exemple
+
+```js
+import { MyComponent } from 'app-components'
+```
+
+If you import more than one component, just separate them with a comma
+
+Exemple
+
+```js
+import { MyComponent, AnotherComponent } from 'app-components'
+```
+
+## Build for production
+
+Execute the command
+
+```bash
+
+npm run build
+
+# ou
+
+yarn build
+
+```
+
+## API reference
+
+
+This project uses the API below
+
+```bash
+
+https://jsonplaceholder.typicode.com/
+
+```
+
+Developer: Lucas de Melo Lima

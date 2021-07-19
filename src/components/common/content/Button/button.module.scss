@@ -1,0 +1,29 @@
+@import '../../../../assets/styles';
+
+.button {
+  border: none;
+  min-height: 30px;
+  min-width: 100px;
+  position: relative;
+  width: auto;
+  white-space: nowrap;
+
+  &.link {
+    background-color: transparent;
+    color: white;
+    font-size: 14px;
+    text-align: initial;
+    text-decoration: underline;
+  }
+
+  &.primary {
+    background-color: white;
+    color: $primary;
+  }
+
+  &.danger {
+    background-color: transparent;
+    color: white;
+    border: 1px solid red;
+  }
+}

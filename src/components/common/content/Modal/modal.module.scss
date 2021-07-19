@@ -1,0 +1,31 @@
+@import '../../../../assets/styles';
+
+.modal {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &__content {
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    justify-content: center;
+    max-width: 90%;
+    width: 400px;
+
+    div {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+  }
+}
