@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router'
+
 import { Typography } from 'app-components'
 import { UserPostsList } from 'app-models'
-import { useRouter } from 'next/router'
 
 import styles from './post.module.scss'
 

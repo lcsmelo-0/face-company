@@ -37,6 +37,7 @@ const UserDetail: NextPage = () => {
   const _handleUserPosts = () => {
     if (posts && posts.data && posts.data.length) {
       const reversedPosts = posts.data.reverse()
+
       return reversedPosts.map((post: UserPostsList, i: KeyType) => (
         <Post key={i} data={post}>
           {post.body}

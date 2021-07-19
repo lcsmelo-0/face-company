@@ -32,7 +32,7 @@ export const getPostDetailFailed = (data: string) => ({
   error: data,
 })
 
-export const deletePost = (id: string | string[]) => ({
+export const deletePost = (id: number | string | string[]) => ({
   type: PostsTypes.DELETE_POST,
   id,
 })
