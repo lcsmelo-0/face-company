@@ -1,4 +1,5 @@
 import { all, Effect, SimpleEffect } from 'redux-saga/effects'
+import watchfetchUserDetail from '../userDetail/saga'
 import watchFetchUsers from '../users/saga'
 
 type StripEffects<T> = T extends IterableIterator<infer E>
@@ -12,5 +13,5 @@ type DecideReturn<T> = T extends Promise<infer R> ? R : T extends IterableIterat
 export type CallReturnType<T extends (...args: any[]) => any> = DecideReturn<ReturnType<T>>
 
 export default function* rootSaga() {
-  return yield all([watchFetchUsers()])
+  return yield all([watchFetchUsers(), watchfetchUserDetail()])
 }

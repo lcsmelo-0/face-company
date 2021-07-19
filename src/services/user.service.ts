@@ -8,7 +8,18 @@ export const getAllUsers = async () => {
       headers: buildHeaders(),
     })
     return Promise.resolve(data.data)
-  } catch (err) {
-    return Promise.reject(err)
+  } catch (error) {
+    return Promise.reject(error)
+  }
+}
+
+export const getUserDetailRequest = async (id: string | string[]) => {
+  try {
+    const data = await baseUrl.get(`${endpoints.users}/${id}`, {
+      headers: buildHeaders(),
+    })
+    return Promise.resolve(data.data)
+  } catch (error) {
+    return Promise.reject(error)
   }
 }
