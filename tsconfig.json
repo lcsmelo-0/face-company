@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
+    "noImplicitAny": false,
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -15,9 +16,13 @@
     "jsx": "preserve",
     "baseUrl": "./",
     "paths": {
+      "app-actions": ["./src/redux/_actions"],
       "app-components": ["./src/components"],
       "app-consts": ["./src/consts"],
-      "app-images": ["./public/images"]
+      "app-hooks": ["./src/hooks"],
+      "app-images": ["./public/images"],
+      "app-models": ["./src/models"],
+      "app-services": ["./src/services"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
