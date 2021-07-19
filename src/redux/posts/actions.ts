@@ -4,6 +4,7 @@ import { PostsTypes } from './types'
 
 export const getUserPosts = (id: string | string[]) => ({
   type: PostsTypes.GET_USER_POSTS,
+  id,
 })
 
 export const getUserPostsSucceeded = (data: UserPostsList) => ({
