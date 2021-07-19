@@ -6,6 +6,7 @@ import { getUserDetail, getUserPosts } from 'app-actions'
 import { Post, Typography } from 'app-components'
 import { useAppDispatch, useAppSelector } from 'app-hooks'
 import { UserPostsList } from 'app-models'
+import { loader } from 'app-utils'
 
 import styles from './userDetail.module.scss'
 
@@ -27,6 +28,11 @@ const UserDetail: NextPage = () => {
       dispatch(getUserPosts(queryId))
     }
   }, [router, userDetail])
+
+  useEffect(() => {
+    const isFetching = userDetail.isFetching || posts.isFetching
+    loader.control(isFetching)
+  }, [userDetail, posts])
 
   const _handleUserPosts = () => {
     if (posts && posts.data && posts.data.length) {

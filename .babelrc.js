@@ -13,6 +13,7 @@ module.exports = {
           'app-images': './public/images',
           'app-models': './src/models',
           'app-services': './src/services',
+          'app-utils': './src/utils',
         },
       },
     ],

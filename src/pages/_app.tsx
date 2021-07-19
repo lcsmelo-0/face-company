@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { Provider } from 'react-redux'
 
+import { Loader } from 'app-components'
 import store from 'src/redux'
 import '../assets/styles/_global.scss'
 
@@ -17,6 +18,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         />
       </Head>
       <Component {...pageProps} />
+      <Loader />
     </Provider>
   )
 }

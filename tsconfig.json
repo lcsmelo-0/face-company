@@ -22,7 +22,8 @@
       "app-hooks": ["./src/hooks"],
       "app-images": ["./public/images"],
       "app-models": ["./src/models"],
-      "app-services": ["./src/services"]
+      "app-services": ["./src/services"],
+      "app-utils": ["./src/utils"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

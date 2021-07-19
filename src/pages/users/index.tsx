@@ -5,6 +5,7 @@ import { listUsers } from 'app-actions'
 import { Card, Typography } from 'app-components'
 import { useAppDispatch, useAppSelector } from 'app-hooks'
 import { UserResponse } from 'app-models'
+import { loader } from 'app-utils'
 
 import styles from './user-list.module.scss'
 
@@ -15,6 +16,10 @@ const UserList: NextPage = () => {
   useEffect(() => {
     dispatch(listUsers())
   }, [])
+
+  useEffect(() => {
+    loader.control(users.isFetching)
+  }, [users])
 
   const _handleUsers = (): React.ReactNode => {
     if (users && users.data && users.data.length > 0) {
