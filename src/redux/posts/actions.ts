@@ -46,3 +46,19 @@ export const deletePostFailed = (data: string) => ({
   type: PostsTypes.DELETE_POST_FAILED,
   error: data,
 })
+
+export const editPost = (id, body) => ({
+  type: PostsTypes.EDIT_POST,
+  id,
+  body,
+})
+
+export const editPostSucceeded = (data: UserPostsList) => ({
+  type: PostsTypes.EDIT_POST_SUCCEEDED,
+  data,
+})
+
+export const editPostFailed = (data: string) => ({
+  type: PostsTypes.EDIT_POST_FAILED,
+  error: data,
+})

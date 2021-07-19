@@ -1,6 +1,7 @@
 export { Button } from './content/Button'
 export { Loader } from './content/Loader'
 export { Modal } from './content/Modal'
+export { TextArea } from './content/TextArea'
 export { Typography } from './content/Typography'
 
 export { Card } from './layout/Card'

@@ -1,6 +1,6 @@
 export interface UserPostsList {
-  userId: number
+  userId?: number
   id: number | string | string[]
-  title: string
-  body: string
+  title?: string
+  body?: string
 }

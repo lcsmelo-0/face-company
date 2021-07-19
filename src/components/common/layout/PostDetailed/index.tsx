@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { UserPostsList } from 'app-models'
-import { Button, Modal, Typography } from 'app-components'
+import { Button, Modal, TextArea, Typography } from 'app-components'
 import { useRouter } from 'next/router'
 
-import { useAppDispatch } from 'app-hooks'
-import { deletePost } from 'app-actions'
+import { useAppDispatch, useTextField } from 'app-hooks'
+import { deletePost, editPost } from 'app-actions'
 import { routes } from 'app-consts'
 
 import styles from './postDetailed.module.scss'
@@ -18,6 +18,18 @@ export const PostDetailed: React.FC<PostDetailedProperties> = ({ data }: PostDet
   const router = useRouter()
 
   const [modalIsVisible, setModalIsVisible] = useState<boolean>(false)
+  const [editMode, setEditMode] = useState<boolean>(false)
+  const [displayError, setDisplayError] = useState<boolean>(false)
+
+  const [title, setTitle, validTitle] = useTextField()
+  const [body, setBody, validBody] = useTextField()
+
+  useEffect(() => {
+    if (data && data.title) {
+      setTitle(data.title)
+      setBody(data.body)
+    }
+  }, [data])
 
   const _deletePost = () => {
     if (data && data.id) {
@@ -27,17 +39,55 @@ export const PostDetailed: React.FC<PostDetailedProperties> = ({ data }: PostDet
     }
   }
 
+  const _editPost = () => {
+    if (validBody && validTitle) {
+      const payload = {
+        title: title,
+        body: body,
+      }
+
+      dispatch(editPost(data.id, payload))
+      setEditMode(false)
+      setDisplayError(false)
+      return
+    }
+
+    setDisplayError(true)
+  }
+
   return (
     <div className={styles.postDetailed}>
-      <Typography variant={'h3'}>{data.title}</Typography>
-      <Typography>{data.body}</Typography>
+      {editMode ? (
+        <TextArea value={title} updateState={setTitle}>
+          {title}
+        </TextArea>
+      ) : (
+        <Typography variant="h3">{data.title}</Typography>
+      )}
+      {editMode ? (
+        <TextArea value={body} updateState={setBody}>
+          {body}
+        </TextArea>
+      ) : (
+        <Typography>{data.body}</Typography>
+      )}
 
       <div className={styles.postDetailed__line}>
-        <Button>Edit</Button>
-        <Button variant="danger" onClick={() => setModalIsVisible(true)}>
-          Delete
-        </Button>
+        {editMode ? (
+          <Button onClick={_editPost}>Save</Button>
+        ) : (
+          <>
+            <Button onClick={() => setEditMode(true)}>Edit</Button>
+            <Button variant="danger" onClick={() => setModalIsVisible(true)}>
+              Delete
+            </Button>
+          </>
+        )}
       </div>
+
+      <Typography className="error" showError={displayError}>
+        Please, Enter valid values ​​for title and body
+      </Typography>
 
       {modalIsVisible && (
         <Modal>

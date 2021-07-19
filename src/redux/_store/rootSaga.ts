@@ -2,7 +2,7 @@ import { all, Effect, SimpleEffect } from 'redux-saga/effects'
 
 import watchfetchUserDetail from '../userDetail/saga'
 import watchFetchUsers from '../users/saga'
-import { watchfetchUserPosts, watchFetchPostDetail, watchFetchDeletePost } from '../posts/saga'
+import { watchfetchUserPosts, watchFetchPostDetail, watchFetchDeletePost, watchFetchEditPost } from '../posts/saga'
 
 type StripEffects<T> = T extends IterableIterator<infer E>
   ? E extends Effect | SimpleEffect<any, any>
@@ -21,5 +21,6 @@ export default function* rootSaga() {
     watchfetchUserPosts(),
     watchFetchPostDetail(),
     watchFetchDeletePost(),
+    watchFetchEditPost(),
   ])
 }

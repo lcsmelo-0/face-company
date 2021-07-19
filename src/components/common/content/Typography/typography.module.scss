@@ -21,6 +21,15 @@ h4.typography {
   color: $primary;
 }
 
+p.error {
+  color: red;
+  opacity: 1;
+
+  &__hide {
+    opacity: 0;
+  }
+}
+
 label.typography {
   background: $primary-grey;
   color: $primary;
