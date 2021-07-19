@@ -1,0 +1,17 @@
+.userList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 50px;
+
+  &__users {
+    display: flex;
+    word-wrap: break-word;
+    white-space: -moz-pre-wrap;
+    white-space: pre-wrap;
+    word-break: break-all;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
