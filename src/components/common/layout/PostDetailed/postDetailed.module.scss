@@ -1,0 +1,15 @@
+.postDetailed {
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 50px;
+
+  &__line {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+  }
+}

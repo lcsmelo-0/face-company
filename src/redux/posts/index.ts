@@ -11,6 +11,7 @@ const posts = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case PostsTypes.GET_USER_POSTS:
     case PostsTypes.GET_POST_DETAIL:
+    case PostsTypes.DELETE_POST:
       return { ...state, error: false, isFetching: true }
 
     case PostsTypes.GET_USER_POSTS_SUCCEEDED:
@@ -27,8 +28,16 @@ const posts = (state = INITIAL_STATE, action) => {
         error: false,
       }
 
+    case PostsTypes.DELETE_POST_SUCCEEDED:
+      return {
+        postData: {},
+        isFetching: false,
+        error: false,
+      }
+
     case PostsTypes.GET_USER_POSTS_FAILED:
     case PostsTypes.GET_POST_DETAIL_FAILED:
+    case PostsTypes.DELETE_POST_FAILED:
       return {
         ...state,
         isFetching: false,

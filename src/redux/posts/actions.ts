@@ -31,3 +31,18 @@ export const getPostDetailFailed = (data: string) => ({
   type: PostsTypes.GET_POST_DETAIL_FAILED,
   error: data,
 })
+
+export const deletePost = (id: string | string[]) => ({
+  type: PostsTypes.DELETE_POST,
+  id,
+})
+
+export const deletePostSucceeded = (data: UserPostsList) => ({
+  type: PostsTypes.DELETE_POST_SUCCEEDED,
+  data,
+})
+
+export const deletePostFailed = (data: string) => ({
+  type: PostsTypes.DELETE_POST_FAILED,
+  error: data,
+})

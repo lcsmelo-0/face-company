@@ -6,7 +6,7 @@ import styles from './button.module.scss'
 interface ButtonProperties {
   children: React.ReactNode
   onClick?: React.MouseEventHandler<HTMLButtonElement>
-  variant?: 'primary' | 'link'
+  variant?: 'primary' | 'link' | 'danger'
   href?: string
 }
 
@@ -25,6 +25,10 @@ export const Button: React.FC<ButtonProperties> = ({
 
     if (variant === 'primary') {
       return styles.primary
+    }
+
+    if (variant === 'danger') {
+      return styles.danger
     }
   }
 

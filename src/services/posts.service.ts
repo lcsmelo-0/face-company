@@ -22,3 +22,14 @@ export const getPostDetailRequest = async (id: string | string[]) => {
     return Promise.reject(error)
   }
 }
+
+export const deletePostRequest = async (id: string | string[]) => {
+  try {
+    const data = await baseUrl.delete(`${endpoints.posts}/${id}`, {
+      headers: buildHeaders(),
+    })
+    return Promise.resolve(data.data)
+  } catch (error) {
+    return Promise.reject(error)
+  }
+}

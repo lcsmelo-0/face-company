@@ -20,4 +20,10 @@
     background-color: white;
     color: $primary;
   }
+
+  &.danger {
+    background-color: $primary;
+    color: white;
+    border: 1px solid red;
+  }
 }
