@@ -1,3 +1,3 @@
 export const routes = {
-    userList: '/user-list'
+  userList: '/user-list',
 }
