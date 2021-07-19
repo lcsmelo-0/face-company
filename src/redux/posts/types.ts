@@ -1,0 +1,5 @@
+export enum PostsTypes {
+  GET_USER_POSTS = '@PostsTypes/GET_USER_POSTS',
+  GET_USER_POSTS_SUCCEEDED = '@PostsTypes/GET_USER_POSTS_SUCCEEDED',
+  GET_USER_POSTS_FAILED = '@PostsTypes/GET_USER_POSTS_FAILED',
+}
