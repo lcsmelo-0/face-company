@@ -5,7 +5,6 @@ import { UserPostsList } from 'app-models'
 import { Button, Modal, TextArea, Typography } from 'app-components'
 import { useAppDispatch, useTextField } from 'app-hooks'
 import { deletePost, editPost } from 'app-actions'
-import { routes } from 'app-consts'
 
 import styles from './postDetailed.module.scss'
 
@@ -34,7 +33,7 @@ export const PostDetailed: React.FC<PostDetailedProperties> = ({ data }: PostDet
   const _deletePost = () => {
     if (data && data.id) {
       dispatch(deletePost(data.id))
-      router.push(`/${routes.userList}/${data.userId}`)
+      router.push(`/users/${data.userId}`)
       setModalIsVisible(false)
     }
   }
@@ -64,6 +63,7 @@ export const PostDetailed: React.FC<PostDetailedProperties> = ({ data }: PostDet
       ) : (
         <Typography variant="h3">{data.title}</Typography>
       )}
+      
       {editMode ? (
         <TextArea value={body} updateState={setBody}>
           {body}

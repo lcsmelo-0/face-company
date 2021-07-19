@@ -44,6 +44,8 @@ const UserDetail: NextPage = () => {
         </Post>
       ))
     }
+
+    return <Typography>No posts were found, try again</Typography>
   }
 
   return (

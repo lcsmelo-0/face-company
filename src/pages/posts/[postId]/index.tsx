@@ -3,7 +3,7 @@ import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 
 import { getPostDetail } from 'app-actions'
-import { PostDetailed } from 'app-components'
+import { PostDetailed, Typography } from 'app-components'
 import { useAppDispatch, useAppSelector } from 'app-hooks'
 import { loader } from 'app-utils'
 
@@ -27,9 +27,11 @@ const PostDetail: NextPage = () => {
   }, [posts])
 
   const _handlePosts = useCallback(() => {
-    if (posts && posts.postData) {
+    if (posts && posts.postData && posts.postData.title) {
       return <PostDetailed data={posts.postData} />
     }
+
+    return <Typography>Could not load this post, please try again</Typography>
   }, [posts])
 
   return <section className={styles.postDetail}>{_handlePosts()}</section>

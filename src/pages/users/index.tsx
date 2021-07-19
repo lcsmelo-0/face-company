@@ -25,6 +25,8 @@ const UserList: NextPage = () => {
     if (users && users.data && users.data.length > 0) {
       return users.data.map((user: UserResponse, i: KeyType) => <Card key={i} user={user} />)
     }
+
+    return <Typography>No users were found, try again</Typography>
   }
 
   return (
