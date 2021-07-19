@@ -1,0 +1,23 @@
+@import '../../../../assets/styles';
+
+.button {
+  border: none;
+  min-height: 30px;
+  min-width: 100px;
+  position: relative;
+  width: auto;
+  white-space: nowrap;
+
+  &.link {
+    background-color: transparent;
+    color: $primary-grey;
+    font-size: 14px;
+    font-weight: $semi-bold;
+    text-align: initial;
+  }
+
+  &.primary {
+    background-color: white;
+    color: $primary;
+  }
+}
