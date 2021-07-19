@@ -5,9 +5,9 @@ import { NextRouter, useRouter } from 'next/router'
 import { getUserDetail, getUserPosts } from 'app-actions'
 import { Post, Typography } from 'app-components'
 import { useAppDispatch, useAppSelector } from 'app-hooks'
+import { UserPostsList } from 'app-models'
 
 import styles from './userDetail.module.scss'
-import { UserPostsList } from 'app-models'
 
 const UserDetail: NextPage = () => {
   const router: NextRouter = useRouter()
@@ -31,7 +31,11 @@ const UserDetail: NextPage = () => {
   const _handleUserPosts = () => {
     if (posts && posts.data && posts.data.length) {
       const reversedPosts = posts.data.reverse()
-      return reversedPosts.map((post: UserPostsList, i: KeyType) => <Post key={i}>{post.body}</Post>)
+      return reversedPosts.map((post: UserPostsList, i: KeyType) => (
+        <Post key={i} data={post}>
+          {post.body}
+        </Post>
+      ))
     }
   }
 
