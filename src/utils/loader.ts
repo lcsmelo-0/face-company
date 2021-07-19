@@ -9,6 +9,4 @@ const control = (isFetching: boolean) => {
   }
 }
 
-const hide = () => {}
-
 export { control }

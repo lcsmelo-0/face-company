@@ -1,13 +1,13 @@
+import { useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import { faceCompanyLogo } from 'app-images'
 import { Button, Input, Typography } from 'app-components'
 import { routes } from 'app-consts'
+import { useEmailField } from 'app-hooks'
 
 import styles from './homePage.module.scss'
-import { useEmailField } from 'app-hooks'
-import { useState } from 'react'
-import { useRouter } from 'next/router'
 
 const HomePage: React.FC = () => {
   const router = useRouter()

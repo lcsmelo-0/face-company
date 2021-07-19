@@ -20,8 +20,8 @@ export const PostDetailed: React.FC<PostDetailedProperties> = ({ data }: PostDet
   const [editMode, setEditMode] = useState<boolean>(false)
   const [displayError, setDisplayError] = useState<boolean>(false)
 
-  const [title, setTitle, validTitle] = useTextField()
-  const [body, setBody, validBody] = useTextField()
+  const [title, setTitle, validTitle] = useTextField('')
+  const [body, setBody, validBody] = useTextField('')
 
   useEffect(() => {
     if (data && data.title) {
