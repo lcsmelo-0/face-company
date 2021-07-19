@@ -16,6 +16,7 @@
     "baseUrl": "./",
     "paths": {
       "app-components": ["./src/components"],
+      "app-consts": ["./src/consts"],
       "app-images": ["./public/images"]
     }
   },
