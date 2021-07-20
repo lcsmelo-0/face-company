@@ -1,5 +1,8 @@
 # Face company
 
+https://face-company-98y31c3iv-lucasmelo18.vercel.app/
+Production Version
+
 ## Technologies
 
 <img  src="https://i.imgur.com/xGSdpWC.png"  title="React, Typescript, Nextjs, Sass, Webpack"  >
@@ -98,6 +101,20 @@ yarn build
 
 ```
 
+## Tests
+
+Execute the command
+
+```bash
+
+npm test
+
+# ou
+
+yarn test
+
+```
+
 ## API reference
 
 
@@ -110,3 +127,5 @@ https://jsonplaceholder.typicode.com/
 ```
 
 Developer: Lucas de Melo Lima
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/lucasmelo18//)](https://www.linkedin.com/in/lucasmelo18/)
+[![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:luucasmell@gmail.com)](mailto:luucasmell@gmail.com)

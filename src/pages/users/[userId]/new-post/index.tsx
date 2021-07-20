@@ -13,8 +13,8 @@ const NewPost: NextPage = () => {
   const dispatch = useAppDispatch()
   const router = useRouter()
 
-  const [title, setTitle, validTitle] = useTextField()
-  const [body, setBody, validBody] = useTextField()
+  const [title, setTitle, validTitle] = useTextField('')
+  const [body, setBody, validBody] = useTextField('')
   const [displayError, setDisplayError] = useState<boolean>(false)
 
   const { posts } = useAppSelector(state => state)

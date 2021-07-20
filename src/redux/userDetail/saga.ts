@@ -11,7 +11,9 @@ const call: CallReturnType<typeof getUserDetailRequest> = Effects.call
 const put = Effects.put
 const takeLatest = Effects.takeLatest
 
-export function* fetchUserDetail({ id }) {
+type IdParam = { id: string, type: string }
+
+export function* fetchUserDetail({ id }: IdParam) {
   try {
     const response: UserResponse = yield call(getUserDetailRequest, id)
     yield put(getUserDetailSucceeded(response))
