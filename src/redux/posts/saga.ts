@@ -28,7 +28,11 @@ const call: CallReturnType<typeof getUserPostsRequest> = Effects.call
 const put = Effects.put
 const takeLatest = Effects.takeLatest
 
-export function* fetchUserPosts({ id }) {
+type IdParam = { id: string, type: string }
+type BodyParam  = { body: UserPostsList, type: UserPostsList}
+type MultipleParams = { id: string, body: UserPostsList, type: any}
+
+export function* fetchUserPosts({ id }: IdParam) {
   try {
     const response: UserPostsList = yield call(getUserPostsRequest, id)
     yield put(getUserPostsSucceeded(response))
@@ -37,7 +41,7 @@ export function* fetchUserPosts({ id }) {
   }
 }
 
-export function* fetchPostDetail({ id }) {
+export function* fetchPostDetail({ id }: IdParam) {
   try {
     const response = yield call(getPostDetailRequest, id)
     yield put(getPostDetailSucceeded(response))
@@ -46,7 +50,7 @@ export function* fetchPostDetail({ id }) {
   }
 }
 
-export function* fetchDeletePost({ id }) {
+export function* fetchDeletePost({ id }: IdParam) {
   try {
     const response = yield call(deletePostRequest, id)
     yield put(deletePostSucceeded(response))
@@ -55,7 +59,7 @@ export function* fetchDeletePost({ id }) {
   }
 }
 
-export function* fetchEditPost({ id, body }) {
+export function* fetchEditPost({ id, body }: MultipleParams) {
   try {
     const response = yield call(editPostRequest, id, body)
     yield put(editPostSucceeded(response))
@@ -64,7 +68,7 @@ export function* fetchEditPost({ id, body }) {
   }
 }
 
-export function* fetchCreatePost({ body }) {
+export function* fetchCreatePost({ body }: BodyParam) {
   try {
     const response = yield call(createPostRequest, body)
     yield put(createPostSucceeded(response))
